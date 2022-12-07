@@ -1,0 +1,10 @@
+@import '@/styles/common.scss';
+.editor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .input {
+    width: 400px;
+    height: 35px;
+  }
+}

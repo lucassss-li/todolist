@@ -1,0 +1,34 @@
+@import '@/styles/design.scss';
+
+.button {
+  width: 70px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #{$--color-text-4};
+  background-color: #{$--color-primary};
+
+  &.success {
+    background-color: #{$--color-success};
+  }
+  &.error {
+    background-color: #{$--color-red};
+  }
+  &.warn {
+    background-color: #{$--color-warn};
+  }
+
+  &:hover {
+    background-color: lighten($--color-primary, 10%);
+    &.success {
+      background-color: lighten($--color-success, 10%);
+    }
+    &.error {
+      background-color: lighten($--color-red, 10%);
+    }
+    &.warn {
+      background-color: lighten($--color-warn, 10%);
+    }
+  }
+}

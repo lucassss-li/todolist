@@ -1,0 +1,29 @@
+$radius: 20px;
+
+// 颜色
+$--color-red: #fc625d;
+$--color-warn: #fcbc40;
+$--color-success: #34c749;
+$--color-primary: #1060c9;
+
+// 文字
+$--color-text: #1d2129;
+$--color-text-1: #4e5969;
+$--color-text-2: #86909c;
+$--color-text-3: #c9cdd4;
+$--color-text-4: #f2f3f5;
+
+// 变暗值
+$--light-shallow: 2%;
+
+$--color-bg: #fff;
+$--color-bg-1: #fafafc;
+$--color-bg-2: lighten($--color-bg-1, $--light-shallow);
+$--color-bg-3: #f2f3f5;
+$--color-bg-4: lighten($--color-bg-2, $--light-shallow);
+$--color-bg-5: #e5e6eb;
+$--color-bg-6: lighten($--color-bg-3, $--light-shallow);
+$--color-bg-7: #e3e3e4;
+$--color-bg-8: lighten($--color-bg-4, $--light-shallow);
+$--color-bg-9: #bebebe;
+$--color-bg-10: lighten($--color-bg-5, $--light-shallow);
