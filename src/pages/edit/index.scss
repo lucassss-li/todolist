@@ -1,8 +1,11 @@
 @import '@/styles/common.scss';
+@import '@/styles/design.scss';
+
 .editor {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: #{$width};
   .input {
     width: 400px;
     height: 35px;

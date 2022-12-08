@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
-import './app.scss'
+import './App.scss'
 import List from './pages/list'
 import Edit from './pages/edit'
 export default class App extends Component {
