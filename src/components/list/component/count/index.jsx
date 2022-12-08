@@ -1,20 +1,20 @@
 import { Component } from 'react'
 import './index.scss'
 import Button from '@/components/button'
-
+import listStore from '@/stores/list.store'
 export default class Count extends Component {
   render() {
     return (
       <div className='count'>
         <div>
-          <Num label='total' num={this.props.list.length} />
-          <Num label='incomplete' num={this.props.list.reduce((r, c) => r + +!c.done, 0)} />
+          <Num label='total' num={listStore.total} />
+          <Num label='incomplete' num={listStore.incomplete} />
         </div>
         <div>
-          <Button type='error' onClick={this.props.setList}>
+          <Button type='error' onClick={() => listStore.setList()}>
             clean
           </Button>
-          <Button onClick={this.props.showEdit}>add</Button>
+          <Button onClick={() => listStore.showEdit()}>add</Button>
         </div>
       </div>
     )

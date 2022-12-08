@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import './index.scss'
 import Button from '@/components/button'
+import listStore from '@/stores/list.store'
 
 export default class ListItem extends Component {
   render() {
@@ -18,13 +19,13 @@ class Operation extends Component {
     return (
       <div className='operation'>
         <Button
-          onClick={() => this.props.setList({ id: this.props.id, state: true })}
+          onClick={() => listStore.setList({ id: this.props.id, state: true })}
           type={this.props.done ? 'warn' : 'success'}
         >
           {this.props.done ? 'cancel' : 'done'}
         </Button>
-        <Button onClick={() => this.props.showEdit({ id: this.props.id })}>edit</Button>
-        <Button type='error' onClick={() => this.props.setList({ id: this.props.id })}>
+        <Button onClick={() => listStore.showEdit({ id: this.props.id })}>edit</Button>
+        <Button type='error' onClick={() => listStore.setList({ id: this.props.id })}>
           delete
         </Button>
       </div>
