@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import './index.scss'
 import Button from '@/components/button'
-import { Link } from 'react-router-dom'
 
 export default class Count extends Component {
   render() {
@@ -12,12 +11,10 @@ export default class Count extends Component {
           <Num label='incomplete' num={this.props.list.reduce((r, c) => r + +!c.done, 0)} />
         </div>
         <div>
-          <Button type='error' onClick={() => this.props.clean()}>
+          <Button type='error' onClick={this.props.setList}>
             clean
           </Button>
-          <Button>
-            <Link to='/edit'>add</Link>
-          </Button>
+          <Button onClick={this.props.showEdit}>add</Button>
         </div>
       </div>
     )

@@ -1,0 +1,16 @@
+@import '@/styles/design.scss';
+.editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #{$mask};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .input {
+    width: 400px;
+    height: 35px;
+  }
+}
