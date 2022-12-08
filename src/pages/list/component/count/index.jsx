@@ -12,7 +12,7 @@ export default class Count extends Component {
           <Num label='incomplete' num={this.props.list.reduce((r, c) => r + +!c.done, 0)} />
         </div>
         <div>
-          <Button type='error' onClick={() => this.props.clean()}>
+          <Button type='error' onClick={() => this.props.setList()}>
             clean
           </Button>
           <Button>

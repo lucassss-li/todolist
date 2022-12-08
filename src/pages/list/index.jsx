@@ -9,10 +9,10 @@ export default class List extends Component {
       <>
         <div className='list'>
           {this.props.list.map(item => (
-            <ListItem {...item} key={item.id} change={this.props.change} delete={this.props.delete} />
+            <ListItem {...item} key={item.id} setList={this.props.setList} />
           ))}
         </div>
-        <Count list={this.props.list} clean={this.props.delete} />
+        <Count list={this.props.list} setList={this.props.setList} />
       </>
     )
   }

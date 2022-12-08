@@ -11,11 +11,7 @@ export default class Edit extends Component {
     this.setState({ content: event.target.value })
   }
   handleSubmit = () => {
-    if (this.state.id) {
-      this.props.change(this.state.id, this.state.content)
-    } else {
-      this.props.add(this.state.content)
-    }
+    this.props.setList({ id: this.state.id, content: this.state.content })
     this.props.history.push('/')
   }
   componentDidMount() {
