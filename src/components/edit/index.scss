@@ -1,10 +1,12 @@
 @import '@/styles/design.scss';
+@import '@/styles/design.scss';
 .editor {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  min-width: #{$width};
   background-color: #{$mask};
   display: flex;
   align-items: center;

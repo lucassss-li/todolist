@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import './app.scss'
+import './App.scss'
 import List from './components/list'
 import Edit from './components/edit'
 export default class App extends Component {
