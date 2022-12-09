@@ -1,17 +1,22 @@
 import React, { Component, createRef } from 'react'
 import { observer } from 'mobx-react'
 import './index.scss'
-import Button from '@/components/button'
-import listStore from '@/stores/list.store'
+import Button from '../../components/button'
+import listStore from '../../stores/list.store'
+
+type EditState = {
+  id?: number
+  content: string
+}
 
 @observer
-export default class Edit extends Component {
+export default class Edit extends Component<object, EditState> {
   state = {
-    id: null,
+    id: undefined,
     content: '',
   }
-  inputRef = createRef()
-  handleChange = event => {
+  inputRef = createRef<HTMLInputElement>()
+  handleChange = (event: any) => {
     this.setState({ content: event.target.value })
   }
   handleSubmit = () => {
@@ -23,7 +28,7 @@ export default class Edit extends Component {
       id,
       content,
     })
-    this.inputRef.current.focus()
+    this.inputRef.current && this.inputRef.current.focus()
   }
   render() {
     return (

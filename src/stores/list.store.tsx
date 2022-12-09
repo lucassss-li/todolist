@@ -1,6 +1,7 @@
 import { observable } from 'mobx'
+import type { Item, ListStore } from '../types/list'
 
-export default observable({
+export default observable<ListStore>({
   list: [
     {
       id: 1,
@@ -12,7 +13,7 @@ export default observable({
     return this.list.length
   },
   get incomplete() {
-    return this.list.reduce((r, c) => r + +!c.done, 0)
+    return this.list.reduce((r: number, c: Item) => r + +!c.done, 0)
   },
   selectedData: null,
   editFlag: false,
@@ -25,7 +26,7 @@ export default observable({
           if (state) {
             item.done = !item.done
           } else {
-            item.content = content
+            item.content = content as string
           }
         }
         return item

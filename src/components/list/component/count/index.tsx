@@ -1,7 +1,8 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import './index.scss'
-import Button from '@/components/button'
-import listStore from '@/stores/list.store'
+import Button from '../../../../components/button'
+import listStore from '../../../../stores/list.store'
+
 export default class Count extends Component {
   render() {
     return (
@@ -21,7 +22,9 @@ export default class Count extends Component {
   }
 }
 
-class Num extends Component {
+type NumProps = { label: string; num: number }
+
+class Num extends Component<NumProps> {
   render() {
     return (
       <div>
