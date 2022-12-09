@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.scss'
-import Button from '../../../../components/button'
-import listStore from '../../../../stores/list.store'
+import Button from '@/components/button'
+import listStore from '@/stores/list.store'
 
 export default class Count extends Component {
   render() {

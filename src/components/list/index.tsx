@@ -4,8 +4,7 @@ import './index.scss'
 import ListItem from './component/item'
 import Count from './component/count'
 
-import listStore from '../../stores/list.store'
-
+import listStore from '@/stores/list.store'
 @observer
 export default class List extends Component {
   render() {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './index.scss'
-import Button from '../../../../components/button'
-import listStore from '../../../../stores/list.store'
-import type { Item } from 'types/list'
+import Button from '@/components/button'
+import listStore from '@/stores/list.store'
+import type { Item } from '@/types/list'
 
 export default class ListItem extends Component<Item> {
   render() {

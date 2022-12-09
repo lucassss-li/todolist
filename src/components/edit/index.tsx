@@ -1,8 +1,8 @@
 import React, { Component, createRef } from 'react'
 import { observer } from 'mobx-react'
 import './index.scss'
-import Button from '../../components/button'
-import listStore from '../../stores/list.store'
+import Button from '@/components/button'
+import listStore from '@/stores/list.store'
 
 type EditState = {
   id?: number
