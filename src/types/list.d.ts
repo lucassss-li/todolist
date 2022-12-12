@@ -4,15 +4,16 @@ export interface Item {
   done: boolean
 }
 
-type SetListParams = Partial<{ id: number; content: string; state: boolean }>
-type ShowEditParams = Partial<{ flag: boolean; id: number }>
-
 export interface ListStore {
   list: Item[]
   total: number
   incomplete: number
   selectedData: Item | null | undefined
   editFlag: boolean
-  setList: (params?: SetListParams) => void
-  showEdit: (params?: ShowEditParams) => void
+  handleChangeState: (id: number) => void
+  handleChangeContent: (id: number, newContent: string) => void
+  handleAdd: (content: string) => void
+  handleDelete: (id?: number) => void
+  showEdit: (id?: number) => void
+  closeEdit: () => void
 }

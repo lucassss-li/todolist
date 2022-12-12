@@ -9,11 +9,12 @@ import listStore from './stores/list.store'
 @observer
 export default class App extends Component {
   render() {
+    const { editFlag } = listStore
     return (
       <div className='app'>
         <div className='app-title'>todoList</div>
         <List />
-        {listStore.editFlag && <Edit />}
+        {editFlag && <Edit />}
       </div>
     )
   }

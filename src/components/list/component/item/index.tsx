@@ -6,9 +6,10 @@ import type { Item } from '@/types/list'
 
 export default class ListItem extends Component<Item> {
   render() {
+    const { content, done } = this.props
     return (
-      <div className={`list-item ${this.props.done ? 'done' : ''}`}>
-        <span>{this.props.content}</span>
+      <div className={`list-item ${done ? 'done' : ''}`}>
+        <span>{content}</span>
         <Operation {...this.props} />
       </div>
     )
@@ -17,16 +18,20 @@ export default class ListItem extends Component<Item> {
 
 class Operation extends Component<Item> {
   render() {
+    const { id, done } = this.props
+    const { handleChangeState, showEdit, handleDelete } = listStore
     return (
       <div className='operation'>
-        <Button
-          onClick={() => listStore.setList({ id: this.props.id, state: true })}
-          type={this.props.done ? 'warn' : 'success'}
-        >
+        <Button onClick={() => handleChangeState(id)} type={done ? 'warn' : 'success'}>
           {this.props.done ? 'cancel' : 'done'}
         </Button>
-        <Button onClick={() => listStore.showEdit({ id: this.props.id })}>edit</Button>
-        <Button type='error' onClick={() => listStore.setList({ id: this.props.id })}>
+        <Button onClick={() => showEdit(id)}>edit</Button>
+        <Button
+          type='error'
+          onClick={() => {
+            handleDelete(id)
+          }}
+        >
           delete
         </Button>
       </div>

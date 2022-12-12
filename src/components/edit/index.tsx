@@ -20,7 +20,11 @@ export default class Edit extends Component<object, EditState> {
     this.setState({ content: event.target.value })
   }
   handleSubmit = () => {
-    listStore.setList({ id: this.state.id, content: this.state.content })
+    if (this.state.id) {
+      listStore.handleChangeContent(this.state.id, this.state.content)
+    } else {
+      listStore.handleAdd(this.state.content)
+    }
   }
   componentDidMount() {
     const { id, content = '' } = listStore.selectedData || {}
@@ -32,7 +36,7 @@ export default class Edit extends Component<object, EditState> {
   }
   render() {
     return (
-      <div className='editor' onClick={() => listStore.showEdit({ flag: false })}>
+      <div className='editor' onClick={() => listStore.closeEdit()}>
         <input
           className='input'
           type='text'

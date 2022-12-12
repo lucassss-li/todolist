@@ -8,10 +8,11 @@ import listStore from '@/stores/list.store'
 @observer
 export default class List extends Component {
   render() {
+    const { list } = listStore
     return (
       <>
         <div className='list'>
-          {listStore.list.map(item => (
+          {list.map(item => (
             <ListItem {...item} key={item.id} />
           ))}
         </div>
